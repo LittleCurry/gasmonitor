@@ -31,7 +31,7 @@ var fusionweb3 = new Web3('https://mainnet.anyswap.exchange')
 var emeraldweb3 = new Web3('https://emerald.oasis.dev')
 var reiweb3 = new Web3('https://rpc.rei.network')
 var astarweb3 = new Web3('https://rpc.astar.network:8545')
-var bttcweb3 = new Web3('https://rpc.astar.network:8545')
+var bttcweb3 = new Web3('https://rpc.bittorrentchain.io')
 
 
 var ChainIDTable = {
