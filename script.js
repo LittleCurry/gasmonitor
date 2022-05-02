@@ -31,6 +31,7 @@ var fusionweb3 = new Web3('https://mainnet.anyswap.exchange')
 var emeraldweb3 = new Web3('https://emerald.oasis.dev')
 var reiweb3 = new Web3('https://rpc.rei.network')
 var astarweb3 = new Web3('https://rpc.astar.network:8545')
+var bttcweb3 = new Web3('https://rpc.astar.network:8545')
 
 
 var ChainIDTable = {
@@ -47,6 +48,7 @@ var ChainIDTable = {
     122: fuseweb3,
     128: huobiweb3,
     137: maticweb3,
+    199: bttcweb3,
     250: ftmweb3,
     288: bobaweb3,
     321: kccweb3,
@@ -83,6 +85,7 @@ var ChainIDTable = {
     122: 'FUSE',
     128: 'HT',
     137: 'MATIC',
+    199: 'BTT',
     250: 'FTM',
     288: 'ETH',
     321: 'KCS',
