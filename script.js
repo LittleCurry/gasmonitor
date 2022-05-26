@@ -134,7 +134,7 @@ for(let i = 1; i < table.rows.length; i++){
             client.getXrpBalance(address).then(balance => {
                 table.rows[i].cells[4].innerHTML = balance})
             
-        } )
+        } )}
     
     try {
         let web3 = ChainIDTable[chainid]
