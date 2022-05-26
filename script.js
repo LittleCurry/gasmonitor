@@ -115,7 +115,6 @@ console.log(table.rows.length);
 
 for(let i = 1; i < table.rows.length; i++){
     let address = table.rows[i].cells[1].innerHTML
-    //var address = '0xE3e0C14bbCBF86b3Ff60E8666C070d34b84F3f73'
     let chainid = table.rows[i].cells[2].innerHTML
     
     let wei
@@ -126,6 +125,16 @@ for(let i = 1; i < table.rows.length; i++){
     if (Number(chainid) === 1313161554) { 
         table.rows[i].cells[4].innerHTML = 'N/A'
         continue; }
+
+    if (chainid === "XRP") { 
+        const XRP_SERVER = "wss://xrplcluster.com/"
+        const client = new xrpl.Client(XRP_SERVER)
+        client.connect().then( _ => {
+
+            client.getXrpBalance(address).then(balance => {
+                table.rows[i].cells[4].innerHTML = balance})
+            
+        } )
     
     try {
         let web3 = ChainIDTable[chainid]
