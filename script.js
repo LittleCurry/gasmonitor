@@ -106,6 +106,7 @@ var ChainIDTable = {
     47805: 'REI',
     1313161554: 'ETH',
     1666600000: 'ONE',
+    XRP: 'XRP',
   };
 
 
