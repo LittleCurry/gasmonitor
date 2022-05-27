@@ -32,6 +32,9 @@ var emeraldweb3 = new Web3('https://emerald.oasis.dev')
 var reiweb3 = new Web3('https://rpc.rei.network')
 var astarweb3 = new Web3('https://rpc.astar.network:8545')
 var bttcweb3 = new Web3('https://rpc.bittorrentchain.io')
+var tomoweb3 = new Web3('https://rpc.tomochain.com')
+var HSCweb3 = new Web3('https://http-mainnet.hoosmartchain.com/')
+var thunderweb3 = new Web3('https://mainnet-rpc.thundercore.com/')
 
 
 var ChainIDTable = {
@@ -43,8 +46,11 @@ var ChainIDTable = {
     56: bscweb3,
     57: syscoinweb3,
     66: okxweb3,
+    70: HSCweb3,
+    88: tomoweb3,
     100: gnosisweb3,
     106: velasweb3,
+    108: thunderweb3,
     122: fuseweb3,
     128: huobiweb3,
     137: maticweb3,
@@ -80,8 +86,11 @@ var ChainIDTable = {
     56: 'BNB',
     57: 'SYS',
     66: 'OKT',
+    70: 'HOO',
+    88: 'TOMO',
     100: 'xDAI',
     106: 'VLX',
+    108: 'TT',
     122: 'FUSE',
     128: 'HT',
     137: 'MATIC',
