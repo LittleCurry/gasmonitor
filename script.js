@@ -35,10 +35,10 @@ var bttcweb3 = new Web3('https://rpc.bittorrentchain.io')
 var tomoweb3 = new Web3('https://rpc.tomochain.com')
 var HSCweb3 = new Web3('https://http-mainnet.hoosmartchain.com/')
 var thunderweb3 = new Web3('https://mainnet-rpc.thundercore.com/')
-const gateweb3 = new Web3('https://evm.gatenode.cc')
-const kavaweb3 = new Web3('https://evm.kava.io')
-const klaytnweb3 = new Web3('https://public-node-api.klaytnapi.com/v1/cypress')
-const etcweb3 = new Web3('https://www.ethercluster.com/etc')
+var gateweb3 = new Web3('https://evm.gatenode.cc')
+var kavaweb3 = new Web3('https://evm.kava.io')
+var klaytnweb3 = new Web3('https://public-node-api.klaytnapi.com/v1/cypress')
+var etcweb3 = new Web3('https://www.ethercluster.com/etc')
 
 
 
