@@ -35,9 +35,14 @@ var bttcweb3 = new Web3('https://rpc.bittorrentchain.io')
 var tomoweb3 = new Web3('https://rpc.tomochain.com')
 var HSCweb3 = new Web3('https://http-mainnet.hoosmartchain.com/')
 var thunderweb3 = new Web3('https://mainnet-rpc.thundercore.com/')
+const gateweb3 = new Web3('https://evm.gatenode.cc')
+const kavaweb3 = new Web3('https://evm.kava.io')
+const klaytnweb3 = new Web3('https://public-node-api.klaytnapi.com/v1/cypress')
+const etcweb3 = new Web3('https://www.ethercluster.com/etc')
 
 
-var ChainIDTable = {
+
+const ChainIDTable = {
     1: ETHweb3,
     10: optimismweb3,
     25: cronosweb3,
@@ -45,8 +50,10 @@ var ChainIDTable = {
     40: telosweb3,
     56: bscweb3,
     57: syscoinweb3,
+    61: etcweb3,
     66: okxweb3,
     70: HSCweb3,
+    86: gateweb3,
     88: tomoweb3,
     100: gnosisweb3,
     106: velasweb3,
@@ -66,7 +73,9 @@ var ChainIDTable = {
     1284: moonbeamweb3,
     1285: moonriverweb3,
     2001: milkomedaweb3,
+    2222: kavaweb3,
     4689: iotexweb3,
+    8217: klaytnweb3,
     32659: fusionweb3,
     42161: arbiweb3,
     42220: celoweb3,
@@ -85,8 +94,10 @@ var ChainIDTable = {
     40: 'TLOS',
     56: 'BNB',
     57: 'SYS',
+    61: 'ETC',
     66: 'OKT',
     70: 'HOO',
+    86: 'GT',
     88: 'TOMO',
     100: 'xDAI',
     106: 'VLX',
@@ -106,7 +117,9 @@ var ChainIDTable = {
     1284: 'GLMR',
     1285: 'MOVR',
     2001: 'mADA',
+    2222: 'KAVA',
     4689: 'IOTX',
+    8217: 'KLAY',
     32659: 'FSN',
     42161: 'ETH',
     42220: 'CELO',
