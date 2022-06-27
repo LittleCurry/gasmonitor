@@ -168,7 +168,7 @@ for(let i = 1; i < table.rows.length; i++){
                     balance = web3.utils.fromWei(wei, 'ether');
                     //var balance = wei;
                     
-                    table.rows[i].cells[4].innerHTML = Number(balance).toFixed(4);
+                    table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
                     console.log(chainid);
                     console.log(balance);
                     console.log(threshold);
