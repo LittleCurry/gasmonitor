@@ -39,12 +39,14 @@ var gateweb3 = new Web3('https://evm.gatenode.cc')
 var kavaweb3 = new Web3('https://evm.kava.io')
 var klaytnweb3 = new Web3('https://public-node-api.klaytnapi.com/v1/cypress')
 var etcweb3 = new Web3('https://www.ethercluster.com/etc')
+var kardiaweb3 = new Web3('https://rpc.kardiachain.io/')
 
 
 
 const ChainIDTable = {
     1: ETHweb3,
     10: optimismweb3,
+    24: kardiaweb3,
     25: cronosweb3,
     30: rskweb3,
     40: telosweb3,
@@ -89,6 +91,7 @@ const ChainIDTable = {
   var ChainCurrencyTable = {
     1: 'ETH',
     10: 'ETH',
+    24: 'CAI',
     25: 'CRO',
     30: 'RBTC',
     40: 'TLOS',
