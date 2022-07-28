@@ -40,6 +40,7 @@ var kavaweb3 = new Web3('https://evm.kava.io')
 var klaytnweb3 = new Web3('https://public-node-api.klaytnapi.com/v1/cypress')
 var etcweb3 = new Web3('https://www.ethercluster.com/etc')
 var kardiaweb3 = new Web3('https://rpc.kardiachain.io/')
+var cubeweb3 = new Web3('https://http-mainnet-us.cube.network')
 
 
 
@@ -74,6 +75,7 @@ const ChainIDTable = {
     1088: metisweb3,
     1284: moonbeamweb3,
     1285: moonriverweb3,
+    1818: cubeweb3,
     2001: milkomedaweb3,
     2222: kavaweb3,
     4689: iotexweb3,
@@ -116,6 +118,7 @@ const ChainIDTable = {
     592: 'ASTR',
     1024: 'CLV',
     1030: 'CFX',
+    1818: 'CUBE',
     1088: 'METIS',
     1284: 'GLMR',
     1285: 'MOVR',
