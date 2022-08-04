@@ -41,6 +41,7 @@ var klaytnweb3 = new Web3('https://public-node-api.klaytnapi.com/v1/cypress')
 var etcweb3 = new Web3('https://www.ethercluster.com/etc')
 var kardiaweb3 = new Web3('https://rpc.kardiachain.io/')
 var cubeweb3 = new Web3('https://http-mainnet-us.cube.network')
+var ontologyweb3 = new Web3('https://dappnode3.ont.io:10339')
 
 
 
@@ -53,6 +54,7 @@ const ChainIDTable = {
     40: telosweb3,
     56: bscweb3,
     57: syscoinweb3,
+    58: ontologyweb3,
     61: etcweb3,
     66: okxweb3,
     70: HSCweb3,
@@ -99,6 +101,7 @@ const ChainIDTable = {
     40: 'TLOS',
     56: 'BNB',
     57: 'SYS',
+    58: 'ONG',
     61: 'ETC',
     66: 'OKT',
     70: 'HOO',
