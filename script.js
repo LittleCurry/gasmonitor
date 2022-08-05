@@ -42,6 +42,7 @@ var etcweb3 = new Web3('https://www.ethercluster.com/etc')
 var kardiaweb3 = new Web3('https://rpc.kardiachain.io/')
 var cubeweb3 = new Web3('https://http-mainnet-us.cube.network')
 var ontologyweb3 = new Web3('https://dappnode3.ont.io:10339')
+var mintmeweb3 = new Web3('https://node1.mintme.com')
 
 
 
@@ -82,6 +83,7 @@ const ChainIDTable = {
     2222: kavaweb3,
     4689: iotexweb3,
     8217: klaytnweb3,
+    24734: mintmeweb3,
     32659: fusionweb3,
     42161: arbiweb3,
     42220: celoweb3,
@@ -129,6 +131,7 @@ const ChainIDTable = {
     2222: 'KAVA',
     4689: 'IOTX',
     8217: 'KLAY',
+    24734: 'MINTME',
     32659: 'FSN',
     42161: 'ETH',
     42220: 'CELO',
