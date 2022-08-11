@@ -43,6 +43,9 @@ var kardiaweb3 = new Web3('https://rpc.kardiachain.io/')
 var cubeweb3 = new Web3('https://http-mainnet-us.cube.network')
 var ontologyweb3 = new Web3('https://dappnode3.ont.io:10339')
 var mintmeweb3 = new Web3('https://node1.mintme.com')
+var smartBCHweb3 = new Web3('https://global.uat.cash')
+var arbiNovaweb3 = new Web3('https://nova.arbitrum.io/rpc')
+var caduceusweb3 = new Web3('https://mainnet.block.caduceus.foundation')
 
 
 
@@ -83,20 +86,23 @@ const ChainIDTable = {
     2222: kavaweb3,
     4689: iotexweb3,
     8217: klaytnweb3,
+    10000: smartBCHweb3,
     24734: mintmeweb3,
     32659: fusionweb3,
     42161: arbiweb3,
+    42170: arbiNovaweb3,
     42220: celoweb3,
     42262: emeraldweb3,
     43114: avaxweb3,
     47805: reiweb3,
+    256256: caduceusweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
   };
 
   var ChainCurrencyTable = {
     1: 'ETH',
-    10: 'ETH',
+    10: 'ETH-OP',
     24: 'CAI',
     25: 'CRO',
     30: 'RBTC',
@@ -117,7 +123,7 @@ const ChainIDTable = {
     137: 'MATIC',
     199: 'BTT',
     250: 'FTM',
-    288: 'ETH',
+    288: 'ETH-boba',
     321: 'KCS',
     336: 'SDN',
     592: 'ASTR',
@@ -131,14 +137,17 @@ const ChainIDTable = {
     2222: 'KAVA',
     4689: 'IOTX',
     8217: 'KLAY',
+    10000: 'BCH',
     24734: 'MINTME',
     32659: 'FSN',
-    42161: 'ETH',
+    42161: 'ETH-arbiOne',
+    42170: 'ETH-arbiNova',
     42220: 'CELO',
     42262: 'ROSE',
     43114: 'AVAX',
     47805: 'REI',
-    1313161554: 'ETH',
+    256256: 'CMP',
+    1313161554: 'ETH-aurora',
     1666600000: 'ONE',
     XRP: 'XRP',
   };
