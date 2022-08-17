@@ -46,6 +46,8 @@ var mintmeweb3 = new Web3('https://node1.mintme.com')
 var smartBCHweb3 = new Web3('https://global.uat.cash')
 var arbiNovaweb3 = new Web3('https://nova.arbitrum.io/rpc')
 var caduceusweb3 = new Web3('https://mainnet.block.caduceus.foundation')
+var stepweb3 = new Web3('https://rpc.step.network')
+var dogeweb3 = new Web3('https://rpc03-sg.dogechain.dog')
 
 
 
@@ -79,9 +81,11 @@ const ChainIDTable = {
     1024: cloverweb3,
     1030: confluxweb3,
     1088: metisweb3,
+    1234: stepweb3,
     1284: moonbeamweb3,
     1285: moonriverweb3,
     1818: cubeweb3,
+    2000: dogeweb3,
     2001: milkomedaweb3,
     2222: kavaweb3,
     4689: iotexweb3,
@@ -131,8 +135,10 @@ const ChainIDTable = {
     1030: 'CFX',
     1818: 'CUBE',
     1088: 'METIS',
+    1234: 'FITFI',
     1284: 'GLMR',
     1285: 'MOVR',
+    2000: 'DOGE',
     2001: 'mADA',
     2222: 'KAVA',
     4689: 'IOTX',
