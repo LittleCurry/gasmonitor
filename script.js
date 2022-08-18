@@ -142,7 +142,7 @@ const ChainIDTable = {
     1285: 'MOVR',
     2000: 'DOGE',
     2001: 'mADA',
-    2025: 'RPG'
+    2025: 'RPG',
     2222: 'KAVA',
     4689: 'IOTX',
     8217: 'KLAY',
