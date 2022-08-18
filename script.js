@@ -48,6 +48,7 @@ var arbiNovaweb3 = new Web3('https://nova.arbitrum.io/rpc')
 var caduceusweb3 = new Web3('https://mainnet.block.caduceus.foundation')
 var stepweb3 = new Web3('https://rpc.step.network')
 var dogeweb3 = new Web3('https://rpc03-sg.dogechain.dog')
+var rangersweb3 = new Web3('https://mainnet.rangersprotocol.com/api/jsonrpc')
 
 
 
@@ -87,6 +88,7 @@ const ChainIDTable = {
     1818: cubeweb3,
     2000: dogeweb3,
     2001: milkomedaweb3,
+    2025: rangersweb3,
     2222: kavaweb3,
     4689: iotexweb3,
     8217: klaytnweb3,
@@ -140,6 +142,7 @@ const ChainIDTable = {
     1285: 'MOVR',
     2000: 'DOGE',
     2001: 'mADA',
+    2025: 'RPG'
     2222: 'KAVA',
     4689: 'IOTX',
     8217: 'KLAY',
