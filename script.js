@@ -49,6 +49,7 @@ var caduceusweb3 = new Web3('https://mainnet.block.caduceus.foundation')
 var stepweb3 = new Web3('https://rpc.step.network')
 var dogeweb3 = new Web3('https://rpc03-sg.dogechain.dog')
 var rangersweb3 = new Web3('https://mainnet.rangersprotocol.com/api/jsonrpc')
+var bobabeamweb3 = new Web3('https://bobabeam.boba.network')
 
 
 
@@ -84,6 +85,7 @@ const ChainIDTable = {
     1088: metisweb3,
     1234: stepweb3,
     1284: moonbeamweb3,
+    1294: bobabeamweb3,
     1285: moonriverweb3,
     1818: cubeweb3,
     2000: dogeweb3,
@@ -140,6 +142,7 @@ const ChainIDTable = {
     1234: 'FITFI',
     1284: 'GLMR',
     1285: 'MOVR',
+    1294: 'Boba',
     2000: 'DOGE',
     2001: 'mADA',
     2025: 'RPG',
