@@ -50,6 +50,7 @@ var stepweb3 = new Web3('https://rpc.step.network')
 var dogeweb3 = new Web3('https://rpc03-sg.dogechain.dog')
 var rangersweb3 = new Web3('https://mainnet.rangersprotocol.com/api/jsonrpc')
 var bobabeamweb3 = new Web3('https://bobabeam.boba.network')
+var godwokenweb3 = new Web3('https://v1.mainnet.godwoken.io/rpc')
 
 
 
@@ -103,6 +104,7 @@ const ChainIDTable = {
     42262: emeraldweb3,
     43114: avaxweb3,
     47805: reiweb3,
+    71402: godwokenweb3,
     256256: caduceusweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
@@ -158,6 +160,7 @@ const ChainIDTable = {
     42262: 'ROSE',
     43114: 'AVAX',
     47805: 'REI',
+    71402: 'pCKB',
     256256: 'CMP',
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
