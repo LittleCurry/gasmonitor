@@ -51,6 +51,7 @@ var dogeweb3 = new Web3('https://rpc03-sg.dogechain.dog')
 var rangersweb3 = new Web3('https://mainnet.rangersprotocol.com/api/jsonrpc')
 var bobabeamweb3 = new Web3('https://bobabeam.boba.network')
 var godwokenweb3 = new Web3('https://v1.mainnet.godwoken.io/rpc')
+var milkomedaA1web3 = new Web3('https://rpc-mainnet-algorand-rollup.a1.milkomeda.com')
 
 
 
@@ -91,6 +92,7 @@ const ChainIDTable = {
     1818: cubeweb3,
     2000: dogeweb3,
     2001: milkomedaweb3,
+    2002: milkomedaA1web3,
     2025: rangersweb3,
     2222: kavaweb3,
     4689: iotexweb3,
@@ -147,6 +149,7 @@ const ChainIDTable = {
     1294: 'Boba',
     2000: 'DOGE',
     2001: 'mADA',
+    2002: 'mALGO',
     2025: 'RPG',
     2222: 'KAVA',
     4689: 'IOTX',
