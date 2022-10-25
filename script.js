@@ -52,6 +52,8 @@ var rangersweb3 = new Web3('https://mainnet.rangersprotocol.com/api/jsonrpc')
 var bobabeamweb3 = new Web3('https://bobabeam.boba.network')
 var godwokenweb3 = new Web3('https://v1.mainnet.godwoken.io/rpc')
 var milkomedaA1web3 = new Web3('https://rpc-mainnet-algorand-rollup.a1.milkomeda.com')
+var wemix3web3 = new Web3('https://api.wemix.com/')
+var bitgertweb3 = new Web3('https://mainnet-rpc.brisescan.com/')
 
 
 
@@ -85,6 +87,7 @@ const ChainIDTable = {
     1024: cloverweb3,
     1030: confluxweb3,
     1088: metisweb3,
+    1111: wemix3web3,
     1234: stepweb3,
     1284: moonbeamweb3,
     1294: bobabeamweb3,
@@ -99,6 +102,7 @@ const ChainIDTable = {
     8217: klaytnweb3,
     10000: smartBCHweb3,
     24734: mintmeweb3,
+    32520: bitgertweb3,
     32659: fusionweb3,
     42161: arbiweb3,
     42170: arbiNovaweb3,
@@ -143,6 +147,7 @@ const ChainIDTable = {
     1030: 'CFX',
     1818: 'CUBE',
     1088: 'METIS',
+    1111: 'Wemix',
     1234: 'FITFI',
     1284: 'GLMR',
     1285: 'MOVR',
@@ -156,6 +161,7 @@ const ChainIDTable = {
     8217: 'KLAY',
     10000: 'BCH',
     24734: 'MINTME',
+    32520: 'BRISE',
     32659: 'FSN',
     42161: 'ETH-arbiOne',
     42170: 'ETH-arbiNova',
