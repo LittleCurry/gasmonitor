@@ -54,6 +54,9 @@ var godwokenweb3 = new Web3('https://v1.mainnet.godwoken.io/rpc')
 var milkomedaA1web3 = new Web3('https://rpc-mainnet-algorand-rollup.a1.milkomeda.com')
 var wemix3web3 = new Web3('https://api.wemix.com/')
 var bitgertweb3 = new Web3('https://mainnet-rpc.brisescan.com/')
+var publicmintweb3 = new Web3('https://rpc.publicmint.io:8545/')
+var dynochainweb3 = new Web3('https://rpc.dynochain.io')
+var evmosweb3 = new Web3('https://json-rpc.evmos.blockhunters.org')
 
 
 
@@ -96,10 +99,13 @@ const ChainIDTable = {
     2000: dogeweb3,
     2001: milkomedaweb3,
     2002: milkomedaA1web3,
+    2020: dynochainweb3,
     2025: rangersweb3,
     2222: kavaweb3,
     4689: iotexweb3,
+    7363: dynochainweb3,
     8217: klaytnweb3,
+    9001: evmosweb3,
     10000: smartBCHweb3,
     24734: mintmeweb3,
     32520: bitgertweb3,
@@ -155,10 +161,13 @@ const ChainIDTable = {
     2000: 'DOGE',
     2001: 'mADA',
     2002: 'mALGO',
+    2020: 'MINT',
     2025: 'RPG',
     2222: 'KAVA',
     4689: 'IOTX',
+    7363: 'DND',
     8217: 'KLAY',
+    9001: 'EVMOS',
     10000: 'BCH',
     24734: 'MINTME',
     32520: 'BRISE',
