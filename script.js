@@ -58,6 +58,7 @@ var publicmintweb3 = new Web3('https://rpc.publicmint.io:8545/')
 var dynochainweb3 = new Web3('https://rpc.dynochain.io')
 var evmosweb3 = new Web3('https://json-rpc.evmos.blockhunters.org')
 var xanaweb3 = new Web3('https://mainnet.xana.net/rpc')
+var ETHWweb3 = new Web3('https://mainnet.ethereumpow.org')
 
 
 
@@ -109,6 +110,7 @@ const ChainIDTable = {
     8888: xanaweb3,
     9001: evmosweb3,
     10000: smartBCHweb3,
+    10001: ETHWweb3,
     24734: mintmeweb3,
     32520: bitgertweb3,
     32659: fusionweb3,
@@ -172,6 +174,7 @@ const ChainIDTable = {
     8888: 'XANA',
     9001: 'EVMOS',
     10000: 'BCH',
+    10001: 'ETHW',
     24734: 'MINTME',
     32520: 'BRISE',
     32659: 'FSN',
