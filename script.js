@@ -57,6 +57,7 @@ var bitgertweb3 = new Web3('https://mainnet-rpc.brisescan.com/')
 var publicmintweb3 = new Web3('https://rpc.publicmint.io:8545/')
 var dynochainweb3 = new Web3('https://rpc.dynochain.io')
 var evmosweb3 = new Web3('https://json-rpc.evmos.blockhunters.org')
+var xanaweb3 = new Web3('https://mainnet.xana.net/rpc')
 
 
 
@@ -105,6 +106,7 @@ const ChainIDTable = {
     4689: iotexweb3,
     7363: dynochainweb3,
     8217: klaytnweb3,
+    8888: xanaweb3,
     9001: evmosweb3,
     10000: smartBCHweb3,
     24734: mintmeweb3,
@@ -167,6 +169,7 @@ const ChainIDTable = {
     4689: 'IOTX',
     7363: 'DND',
     8217: 'KLAY',
+    8888: 'XANA',
     9001: 'EVMOS',
     10000: 'BCH',
     24734: 'MINTME',
