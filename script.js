@@ -59,6 +59,8 @@ var dynochainweb3 = new Web3('https://rpc.dynochain.io')
 var evmosweb3 = new Web3('https://json-rpc.evmos.blockhunters.org')
 var xanaweb3 = new Web3('https://mainnet.xana.net/rpc')
 var ETHWweb3 = new Web3('https://mainnet.ethereumpow.org')
+var HPBweb3 = new Web3('https://hpbnode.com')
+var ONUSweb3 = new Web3('https://rpc.onuschain.io')
 
 
 
@@ -85,6 +87,7 @@ const ChainIDTable = {
     137: maticweb3,
     199: bttcweb3,
     250: ftmweb3,
+    269: HPBweb3,
     288: bobaweb3,
     321: kccweb3,
     336: shidenweb3,
@@ -98,6 +101,7 @@ const ChainIDTable = {
     1294: bobabeamweb3,
     1285: moonriverweb3,
     1818: cubeweb3,
+    1975: ONUSweb3,
     2000: dogeweb3,
     2001: milkomedaweb3,
     2002: milkomedaA1web3,
@@ -149,6 +153,7 @@ const ChainIDTable = {
     137: 'MATIC',
     199: 'BTT',
     250: 'FTM',
+    269: 'HPB',
     288: 'ETH-boba',
     321: 'KCS',
     336: 'SDN',
@@ -162,6 +167,7 @@ const ChainIDTable = {
     1284: 'GLMR',
     1285: 'MOVR',
     1294: 'Boba',
+    1975: 'ONUS',
     2000: 'DOGE',
     2001: 'mADA',
     2002: 'mALGO',
