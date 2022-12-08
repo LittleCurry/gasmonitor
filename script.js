@@ -1,7 +1,7 @@
 var ETHweb3 = new Web3('https://rpc.ankr.com/eth')
 var bscweb3 = new Web3('https://bsc-dataseed.binance.org/')
 var maticweb3 = new Web3('https://polygon-rpc.com/')
-var ftmweb3 =new Web3('https://rpc.ftm.tools/')
+var ftmweb3 = new Web3('https://rpc.ftm.tools/')
 var avaxweb3 = new Web3('https://rpc.ankr.com/avalanche')
 var moonriverweb3 = new Web3('https://rpc.api.moonriver.moonbeam.network')
 var harmonyweb3 = new Web3('https://api.harmony.one')
@@ -61,6 +61,7 @@ var xanaweb3 = new Web3('https://mainnet.xana.net/rpc')
 var ETHWweb3 = new Web3('https://mainnet.ethereumpow.org')
 var HPBweb3 = new Web3('https://hpbnode.com')
 var ONUSweb3 = new Web3('https://rpc.onuschain.io')
+var xxweb3 = new Web3('https://rpc.xx.io')
 
 
 
@@ -128,9 +129,10 @@ const ChainIDTable = {
     256256: caduceusweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
-  };
+    1111111111: xxweb3,
+};
 
-  var ChainCurrencyTable = {
+var ChainCurrencyTable = {
     1: 'ETH',
     10: 'ETH-OP',
     24: 'CAI',
@@ -195,61 +197,64 @@ const ChainIDTable = {
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
     XRP: 'XRP',
-  };
+    1111111111: 'xx',
+};
 
 
 var table = document.getElementById("table");
 
 console.log(table.rows.length);
 
-for(let i = 1; i < table.rows.length; i++){
+for (let i = 1; i < table.rows.length; i++) {
     let address = table.rows[i].cells[1].innerHTML
     let chainid = table.rows[i].cells[2].innerHTML
-    
+
     let wei
     let balance
     let threshold = table.rows[i].cells[3].innerHTML
-   
-    table.rows[i].cells[7].innerHTML = ChainCurrencyTable[chainid];
-    if (Number(chainid) === 1313161554) { 
-        table.rows[i].cells[4].innerHTML = 'N/A'
-        continue; }
 
-    if (chainid === "XRP") { 
+    table.rows[i].cells[7].innerHTML = ChainCurrencyTable[chainid];
+    if (Number(chainid) === 1313161554) {
+        table.rows[i].cells[4].innerHTML = 'N/A'
+        continue;
+    }
+
+    if (chainid === "XRP") {
         const XRP_SERVER = "wss://xrplcluster.com/"
         const client = new xrpl.Client(XRP_SERVER)
-        client.connect().then( _ => {
+        client.connect().then(_ => {
 
             client.getXrpBalance(address).then(balance => {
-                table.rows[i].cells[4].innerHTML = balance})
-            
+                table.rows[i].cells[4].innerHTML = balance
+            })
+
         })
-         continue}
-    
+        continue
+    }
+
     try {
         let web3 = ChainIDTable[chainid]
 
-         web3.eth.getBalance(address, function (error, wei) {
-                if (!error) {
-                    balance = web3.utils.fromWei(wei, 'ether');
-                    //var balance = wei;
-                    //table.rows[i].cells[4].innerHTML = balance.toFixed(2);
-                    table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
-                    console.log(chainid);
-                    console.log(balance);
-                    console.log(threshold);
-                    if(Number(balance)<Number(threshold)){
-                        table.rows[i].cells[5].innerHTML = '**** Balance Below Threshold ****'
-                    }
+        web3.eth.getBalance(address, function (error, wei) {
+            if (!error) {
+                balance = web3.utils.fromWei(wei, 'ether');
+                //var balance = wei;
+                //table.rows[i].cells[4].innerHTML = balance.toFixed(2);
+                table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
+                console.log(chainid);
+                console.log(balance);
+                console.log(threshold);
+                if (Number(balance) < Number(threshold)) {
+                    table.rows[i].cells[5].innerHTML = '**** Balance Below Threshold ****'
                 }
-            });
-        } catch (err) {
-            table.rows[i].cells[4].innerHTML = err;
-        }
-    
+            }
+        });
+    } catch (err) {
+        table.rows[i].cells[4].innerHTML = err;
+    }
+
 }
 
 
         //ETHweb3 = new Web3("https://main-light.eth.linkpool.io");
         //ETHweb3.eth.getBalance(0xdB8cC5036954cdeB24ED922c772b86FB9c7Bd7c5);
-       
