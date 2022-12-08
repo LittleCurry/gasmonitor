@@ -61,7 +61,6 @@ var xanaweb3 = new Web3('https://mainnet.xana.net/rpc')
 var ETHWweb3 = new Web3('https://mainnet.ethereumpow.org')
 var HPBweb3 = new Web3('https://hpbnode.com')
 var ONUSweb3 = new Web3('https://rpc.onuschain.io')
-var xxweb3 = new Web3('https://rpc.xx.io')
 
 
 
@@ -129,7 +128,6 @@ const ChainIDTable = {
     256256: caduceusweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
-    1111111111: xxweb3,
 };
 
 var ChainCurrencyTable = {
@@ -197,7 +195,6 @@ var ChainCurrencyTable = {
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
     XRP: 'XRP',
-    1111111111: 'xx',
 };
 
 
