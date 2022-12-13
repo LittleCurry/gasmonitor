@@ -62,7 +62,7 @@ var ETHWweb3 = new Web3('https://mainnet.ethereumpow.org')
 var HPBweb3 = new Web3('https://hpbnode.com')
 var ONUSweb3 = new Web3('https://rpc.onuschain.io')
 var Goerliweb3 = new Web3('https://rpc.ankr.com/eth_goerli')
-var BNBTestnetweb3 = new Web3('https://data-seed-prebsc-2-s1.binance.org:8545')
+var BNBTestnetweb3 = new Web3('https://bsc-testnet.public.blastapi.io')
 var FantomTestnetweb3 = new Web3('https://rpc.ankr.com/fantom_testnet')
 var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
 
@@ -139,7 +139,7 @@ const ChainIDTable = {
 
 var ChainCurrencyTable = {
     1: 'ETH',
-    5: 'ETH',
+    5: 'ETH(testnet)',
     10: 'ETH-OP',
     24: 'CAI',
     25: 'CRO',
@@ -153,7 +153,7 @@ var ChainCurrencyTable = {
     70: 'HOO',
     86: 'GT',
     88: 'TOMO',
-    97: 'BNB',
+    97: 'BNB(testnet)',
     100: 'xDAI',
     106: 'VLX',
     108: 'TT',
@@ -183,7 +183,7 @@ var ChainCurrencyTable = {
     2020: 'MINT',
     2025: 'RPG',
     2222: 'KAVA',
-    4002: 'FTM',
+    4002: 'FTM(testnet)',
     4689: 'IOTX',
     7363: 'DND',
     8217: 'KLAY',
@@ -198,7 +198,7 @@ var ChainCurrencyTable = {
     42170: 'ETH-arbiNova',
     42220: 'CELO',
     42262: 'ROSE',
-    43113: 'AVAX',
+    43113: 'AVAX(testnet)',
     43114: 'AVAX',
     47805: 'REI',
     71402: 'pCKB',
@@ -241,40 +241,40 @@ for (let i = 1; i < table.rows.length; i++) {
         continue
     }
     //near
-    if (chainid === "NEAR") {
-        // Import the near-api-js library
-        const nearAPI = require("near-api-js");
-        const { keyStores } = nearAPI;
-        const homedir = require("os").homedir();
-        const CREDENTIALS_DIR = ".near-credentials";
-        const credentialsPath = require("path").join(homedir, CREDENTIALS_DIR);
-        const myKeyStore = new keyStores.UnencryptedFileSystemKeyStore(credentialsPath);
+    // if (chainid === "NEAR") {
+    //     // Import the near-api-js library
+    //     const nearAPI = require("near-api-js");
+    //     const { keyStores } = nearAPI;
+    //     const homedir = require("os").homedir();
+    //     const CREDENTIALS_DIR = ".near-credentials";
+    //     const credentialsPath = require("path").join(homedir, CREDENTIALS_DIR);
+    //     const myKeyStore = new keyStores.UnencryptedFileSystemKeyStore(credentialsPath);
 
-        const { connect } = nearAPI;
+    //     const { connect } = nearAPI;
 
-        const connectionConfig = {
-            networkId: "mainnet",
-            keyStore: myKeyStore, // first create a key store
-            nodeUrl: "https://rpc.mainnet.near.org",
-            walletUrl: "https://wallet.mainnet.near.org",
-            helperUrl: "https://helper.mainnet.near.org",
-            explorerUrl: "https://explorer.mainnet.near.org",
-        };
+    //     const connectionConfig = {
+    //         networkId: "mainnet",
+    //         keyStore: myKeyStore, // first create a key store
+    //         nodeUrl: "https://rpc.mainnet.near.org",
+    //         walletUrl: "https://wallet.mainnet.near.org",
+    //         helperUrl: "https://helper.mainnet.near.org",
+    //         explorerUrl: "https://explorer.mainnet.near.org",
+    //     };
 
-        async function getAccountBalance() {
-            const nearConnection = await connect(connectionConfig);
+    //     async function getAccountBalance() {
+    //         const nearConnection = await connect(connectionConfig);
 
-            const account = await nearConnection.account(address);
+    //         const account = await nearConnection.account(address);
 
-            // gets account balance
-            const balance = await (await account.getAccountBalance()).total;
-            const balanceInNear = parseInt(balance.slice(0, -24));
-            table.rows[i].cells[4].innerHTML = balanceInNear;
-        }
+    //         // gets account balance
+    //         const balance = await (await account.getAccountBalance()).total;
+    //         const balanceInNear = parseInt(balance.slice(0, -24));
+    //         table.rows[i].cells[4].innerHTML = balanceInNear;
+    //     }
 
-        getAccountBalance();
-        continue;
-    }
+    //     getAccountBalance();
+    //     continue;
+    // }
 
 
     try {
