@@ -61,11 +61,15 @@ var xanaweb3 = new Web3('https://mainnet.xana.net/rpc')
 var ETHWweb3 = new Web3('https://mainnet.ethereumpow.org')
 var HPBweb3 = new Web3('https://hpbnode.com')
 var ONUSweb3 = new Web3('https://rpc.onuschain.io')
-
+var Goerliweb3 = new Web3('https://rpc.ankr.com/eth_goerli')
+var BNBTestnetweb3 = new Web3('https://data-seed-prebsc-2-s1.binance.org:8545')
+var FantomTestnetweb3 = new Web3('https://rpc.ankr.com/fantom_testnet')
+var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
 
 
 const ChainIDTable = {
     1: ETHweb3,
+    5: Goerliweb3,
     10: optimismweb3,
     24: kardiaweb3,
     25: cronosweb3,
@@ -79,6 +83,7 @@ const ChainIDTable = {
     70: HSCweb3,
     86: gateweb3,
     88: tomoweb3,
+    97: BNBTestnetweb3,
     100: gnosisweb3,
     106: velasweb3,
     108: thunderweb3,
@@ -108,6 +113,7 @@ const ChainIDTable = {
     2020: dynochainweb3,
     2025: rangersweb3,
     2222: kavaweb3,
+    4002: FantomTestnetweb3,
     4689: iotexweb3,
     7363: dynochainweb3,
     8217: klaytnweb3,
@@ -122,6 +128,7 @@ const ChainIDTable = {
     42170: arbiNovaweb3,
     42220: celoweb3,
     42262: emeraldweb3,
+    43113: AvalancheFujiTestnetweb3,
     43114: avaxweb3,
     47805: reiweb3,
     71402: godwokenweb3,
@@ -132,6 +139,7 @@ const ChainIDTable = {
 
 var ChainCurrencyTable = {
     1: 'ETH',
+    5: 'ETH',
     10: 'ETH-OP',
     24: 'CAI',
     25: 'CRO',
@@ -145,6 +153,7 @@ var ChainCurrencyTable = {
     70: 'HOO',
     86: 'GT',
     88: 'TOMO',
+    97: 'BNB',
     100: 'xDAI',
     106: 'VLX',
     108: 'TT',
@@ -174,6 +183,7 @@ var ChainCurrencyTable = {
     2020: 'MINT',
     2025: 'RPG',
     2222: 'KAVA',
+    4002: 'FTM',
     4689: 'IOTX',
     7363: 'DND',
     8217: 'KLAY',
@@ -188,6 +198,7 @@ var ChainCurrencyTable = {
     42170: 'ETH-arbiNova',
     42220: 'CELO',
     42262: 'ROSE',
+    43113: 'AVAX',
     43114: 'AVAX',
     47805: 'REI',
     71402: 'pCKB',
@@ -195,6 +206,7 @@ var ChainCurrencyTable = {
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
     XRP: 'XRP',
+    NEAR: 'NEAR',
 };
 
 
@@ -228,6 +240,42 @@ for (let i = 1; i < table.rows.length; i++) {
         })
         continue
     }
+    //near
+    if (chainid === "NEAR") {
+        // Import the near-api-js library
+        const nearAPI = require("near-api-js");
+        const { keyStores } = nearAPI;
+        const homedir = require("os").homedir();
+        const CREDENTIALS_DIR = ".near-credentials";
+        const credentialsPath = require("path").join(homedir, CREDENTIALS_DIR);
+        const myKeyStore = new keyStores.UnencryptedFileSystemKeyStore(credentialsPath);
+
+        const { connect } = nearAPI;
+
+        const connectionConfig = {
+            networkId: "mainnet",
+            keyStore: myKeyStore, // first create a key store
+            nodeUrl: "https://rpc.mainnet.near.org",
+            walletUrl: "https://wallet.mainnet.near.org",
+            helperUrl: "https://helper.mainnet.near.org",
+            explorerUrl: "https://explorer.mainnet.near.org",
+        };
+
+        async function getAccountBalance() {
+            const nearConnection = await connect(connectionConfig);
+
+            const account = await nearConnection.account(address);
+
+            // gets account balance
+            const balance = await (await account.getAccountBalance()).total;
+            const balanceInNear = parseInt(balance.slice(0, -24));
+            table.rows[i].cells[4].innerHTML = balanceInNear;
+        }
+
+        getAccountBalance();
+        continue;
+    }
+
 
     try {
         let web3 = ChainIDTable[chainid]
