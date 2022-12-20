@@ -65,6 +65,7 @@ var Goerliweb3 = new Web3('https://rpc.ankr.com/eth_goerli')
 var BNBTestnetweb3 = new Web3('https://bsc-testnet.public.blastapi.io')
 var FantomTestnetweb3 = new Web3('https://rpc.ankr.com/fantom_testnet')
 var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
+var OMAXweb3 = new Web3('https://mainapi.omaxray.com')
 
 
 const ChainIDTable = {
@@ -94,6 +95,7 @@ const ChainIDTable = {
     250: ftmweb3,
     269: HPBweb3,
     288: bobaweb3,
+    311:OMAXweb3,
     321: kccweb3,
     336: shidenweb3,
     592: astarweb3,
@@ -164,6 +166,7 @@ var ChainCurrencyTable = {
     250: 'FTM',
     269: 'HPB',
     288: 'ETH-boba',
+    311: 'OMAX',
     321: 'KCS',
     336: 'SDN',
     592: 'ASTR',
