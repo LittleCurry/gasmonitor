@@ -280,6 +280,7 @@ for (let i = 1; i < table.rows.length; i++) {
     //     getAccountBalance();
     //     continue;
     // }
+    
 
 
     try {
