@@ -66,7 +66,7 @@ var BNBTestnetweb3 = new Web3('https://bsc-testnet.public.blastapi.io')
 var FantomTestnetweb3 = new Web3('https://rpc.ankr.com/fantom_testnet')
 var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
 var OMAXweb3 = new Web3('https://mainapi.omaxray.com')
-
+var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -123,6 +123,7 @@ const ChainIDTable = {
     9001: evmosweb3,
     10000: smartBCHweb3,
     10001: ETHWweb3,
+    23294: OasisSapphireweb3,
     24734: mintmeweb3,
     32520: bitgertweb3,
     32659: fusionweb3,
@@ -194,6 +195,7 @@ var ChainCurrencyTable = {
     9001: 'EVMOS',
     10000: 'BCH',
     10001: 'ETHW',
+    23294: 'ROSE',
     24734: 'MINTME',
     32520: 'BRISE',
     32659: 'FSN',
