@@ -67,6 +67,7 @@ var FantomTestnetweb3 = new Web3('https://rpc.ankr.com/fantom_testnet')
 var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
 var OMAXweb3 = new Web3('https://mainapi.omaxray.com')
 var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
+var Cantoweb3 = new Web3('https://canto.slingshot.finance')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -118,6 +119,7 @@ const ChainIDTable = {
     4002: FantomTestnetweb3,
     4689: iotexweb3,
     7363: dynochainweb3,
+    7700: Cantoweb3,
     8217: klaytnweb3,
     8888: xanaweb3,
     9001: evmosweb3,
@@ -190,6 +192,7 @@ var ChainCurrencyTable = {
     4002: 'FTM-testnet',
     4689: 'IOTX',
     7363: 'DND',
+    7700: 'Canto',
     8217: 'KLAY',
     8888: 'XANA',
     9001: 'EVMOS',
