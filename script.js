@@ -67,7 +67,7 @@ var FantomTestnetweb3 = new Web3('https://rpc.ankr.com/fantom_testnet')
 var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
 var OMAXweb3 = new Web3('https://mainapi.omaxray.com')
 var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
-var Cantoweb3 = new Web3('https://canto.slingshot.finance')
+var Cantoweb3 = new Web3('https://canto.neobase.one')
 
 const ChainIDTable = {
     1: ETHweb3,
