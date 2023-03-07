@@ -68,6 +68,7 @@ var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
 var OMAXweb3 = new Web3('https://mainapi.omaxray.com')
 var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
 var Cantoweb3 = new Web3('https://canto.neobase.one')
+var Ektaweb3 = new Web3('https://main.ekta.io')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -110,6 +111,7 @@ const ChainIDTable = {
     1285: moonriverweb3,
     1818: cubeweb3,
     1975: ONUSweb3,
+    1994: Ektaweb3,
     2000: dogeweb3,
     2001: milkomedaweb3,
     2002: milkomedaA1web3,
@@ -183,6 +185,7 @@ var ChainCurrencyTable = {
     1285: 'MOVR',
     1294: 'Boba',
     1975: 'ONUS',
+    1994: 'Ekta'
     2000: 'DOGE',
     2001: 'mADA',
     2002: 'mALGO',
