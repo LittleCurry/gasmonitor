@@ -312,6 +312,5 @@ for (let i = 1; i < table.rows.length; i++) {
 
 }
 
-
         //ETHweb3 = new Web3("https://main-light.eth.linkpool.io");
         //ETHweb3.eth.getBalance(0xdB8cC5036954cdeB24ED922c772b86FB9c7Bd7c5);
