@@ -185,7 +185,7 @@ var ChainCurrencyTable = {
     1285: 'MOVR',
     1294: 'Boba',
     1975: 'ONUS',
-    1994: 'Ekta'
+    1994: 'Ekta',
     2000: 'DOGE',
     2001: 'mADA',
     2002: 'mALGO',
