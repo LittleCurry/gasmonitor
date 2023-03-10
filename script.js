@@ -69,7 +69,14 @@ var OMAXweb3 = new Web3('https://mainapi.omaxray.com')
 var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
 var Cantoweb3 = new Web3('https://canto.neobase.one')
 var Ektaweb3 = new Web3('https://main.ekta.io')
-
+var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
+var XANACHAINtestnetweb3 = new Web3('https://testnet.xana.net/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
+var KlaytnTestnetweb3 = new Web3('https://api.baobab.klaytn.net:8651')
+var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com') 
+var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
+var DexitTestnetweb3 = new Web3('https://testnet.dexit.network')
+var ScrollTestnetweb3 = new Web3('https://prealpha-rpc.scroll.io/l2')
+var TEKTAweb3 = new Web3('https://test.ekta.io:8545')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -101,11 +108,16 @@ const ChainIDTable = {
     311:OMAXweb3,
     321: kccweb3,
     336: shidenweb3,
+    338: CronosTestnetweb3,
     592: astarweb3,
+    899: DexitTestnetweb3,
+    1001: KlaytnTestnetweb3,
+    1004: TEKTAweb3,
     1024: cloverweb3,
     1030: confluxweb3,
     1088: metisweb3,
     1111: wemix3web3,
+    1112: WEMIXTestnetweb3,
     1234: stepweb3,
     1284: moonbeamweb3,
     1294: bobabeamweb3,
@@ -140,7 +152,10 @@ const ChainIDTable = {
     43114: avaxweb3,
     47805: reiweb3,
     71402: godwokenweb3,
+    76798: XANACHAINtestnetweb3,
+    80001: Mumbaiweb3,
     256256: caduceusweb3,
+    534354: ScrollTestnetweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
 };
@@ -175,12 +190,17 @@ var ChainCurrencyTable = {
     311: 'OMAX',
     321: 'KCS',
     336: 'SDN',
+    338: 'cro-testnet',
     592: 'ASTR',
+    899: 'DXT-testnet',
+    1001: 'KLAY-testnet',
+    1004: 'T-EKTA-testnet',
     1024: 'CLV',
     1030: 'CFX',
     1818: 'CUBE',
     1088: 'METIS',
     1111: 'Wemix',
+    1112: 'wemix-testnet',
     1234: 'FITFI',
     1284: 'GLMR',
     1285: 'MOVR',
@@ -214,7 +234,10 @@ var ChainCurrencyTable = {
     43114: 'AVAX',
     47805: 'REI',
     71402: 'pCKB',
+    76798: 'xeta-testnet'
+    80001: 'MATIC-testnet',
     256256: 'CMP',
+    534354: 'TSETH-testnet',
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
     XRP: 'XRP',
