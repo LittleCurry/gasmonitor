@@ -77,11 +77,19 @@ var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
 var DexitTestnetweb3 = new Web3('https://testnet.dexit.network')
 var ScrollTestnetweb3 = new Web3('https://prealpha-rpc.scroll.io/l2')
 var TEKTAweb3 = new Web3('https://test.ekta.io:8545')
+var ShardeumLibertyTestnetweb3 = new Web3('https://liberty10.shardeum.org')
+var PolygonzkEVMTestnetweb3 = new Web3('https://rpc.public.zkevm-test.net')
+var MantleTestnetweb3 = new Web3('https://rpc.testnet.mantle.xyz')
+var NeonEVMDevNetweb3 = new Web3('https://devnet.neonevm.org')
+var ShardeumSphinxweb3 = new Web3('https://sphinx.shardeum.org')
+var BaseGoerliTestneweb3 = new Web3('https://goerli.base.org')
+var ThunderCoreTestnetweb3 = new Web3('https://testnet-rpc.thundercore.com')
 
 const ChainIDTable = {
     1: ETHweb3,
     5: Goerliweb3,
     10: optimismweb3,
+    18: ThunderCoreTestnetweb3,
     24: kardiaweb3,
     25: cronosweb3,
     30: rskweb3,
@@ -122,6 +130,7 @@ const ChainIDTable = {
     1284: moonbeamweb3,
     1294: bobabeamweb3,
     1285: moonriverweb3,
+    1422: PolygonzkEVMTestnetweb3,
     1818: cubeweb3,
     1975: ONUSweb3,
     1994: Ektaweb3,
@@ -133,8 +142,11 @@ const ChainIDTable = {
     2222: kavaweb3,
     4002: FantomTestnetweb3,
     4689: iotexweb3,
+    5001: MantleTestnetweb3,
     7363: dynochainweb3,
     7700: Cantoweb3,
+    8080: ShardeumLibertyTestnetweb3,
+    8082: ShardeumSphinxweb3,
     8217: klaytnweb3,
     8888: xanaweb3,
     9001: evmosweb3,
@@ -154,8 +166,10 @@ const ChainIDTable = {
     71402: godwokenweb3,
     76798: XANACHAINtestnetweb3,
     80001: Mumbaiweb3,
+    84531: BaseGoerliTestneweb3,
     256256: caduceusweb3,
     534354: ScrollTestnetweb3,
+    245022926: NeonEVMDevNetweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
 };
@@ -164,6 +178,7 @@ var ChainCurrencyTable = {
     1: 'ETH',
     5: 'ETH-testnet',
     10: 'ETH-OP',
+    18: 'TST-testnet',
     24: 'CAI',
     25: 'CRO',
     30: 'RBTC',
@@ -205,6 +220,7 @@ var ChainCurrencyTable = {
     1284: 'GLMR',
     1285: 'MOVR',
     1294: 'Boba',
+    1422: 'ETH-testnet',
     1975: 'ONUS',
     1994: 'Ekta',
     2000: 'DOGE',
@@ -215,8 +231,11 @@ var ChainCurrencyTable = {
     2222: 'KAVA',
     4002: 'FTM-testnet',
     4689: 'IOTX',
+    5001: 'BIT-testnet',
     7363: 'DND',
     7700: 'Canto',
+    8080: 'SHM-testnet',
+    8082: 'SHM1-testnet',
     8217: 'KLAY',
     8888: 'XANA',
     9001: 'EVMOS',
@@ -236,8 +255,10 @@ var ChainCurrencyTable = {
     71402: 'pCKB',
     76798: 'xeta-testnet',
     80001: 'MATIC-testnet',
+    84531: 'ETH-Base-testnet',
     256256: 'CMP',
     534354: 'TSETH-testnet',
+    245022926: 'NEON-testnet',
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
     XRP: 'XRP',
