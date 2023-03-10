@@ -234,7 +234,7 @@ var ChainCurrencyTable = {
     43114: 'AVAX',
     47805: 'REI',
     71402: 'pCKB',
-    76798: 'xeta-testnet'
+    76798: 'xeta-testnet',
     80001: 'MATIC-testnet',
     256256: 'CMP',
     534354: 'TSETH-testnet',
