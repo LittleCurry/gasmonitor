@@ -84,6 +84,8 @@ var NeonEVMDevNetweb3 = new Web3('https://devnet.neonevm.org')
 var ShardeumSphinxweb3 = new Web3('https://sphinx.shardeum.org')
 var BaseGoerliTestneweb3 = new Web3('https://goerli.base.org')
 var ThunderCoreTestnetweb3 = new Web3('https://testnet-rpc.thundercore.com')
+var FindoraMainnetweb3 = new Web3('https://rpc-mainnet.findora.org')
+var PlanqMainnetweb3 = new Web3('https://evm-rpc.planq.network')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -139,10 +141,12 @@ const ChainIDTable = {
     2002: milkomedaA1web3,
     2020: dynochainweb3,
     2025: rangersweb3,
+    2152: FindoraMainnetweb3,
     2222: kavaweb3,
     4002: FantomTestnetweb3,
     4689: iotexweb3,
     5001: MantleTestnetweb3,
+    7070: PlanqMainnetweb3,
     7363: dynochainweb3,
     7700: Cantoweb3,
     8080: ShardeumLibertyTestnetweb3,
@@ -228,10 +232,12 @@ var ChainCurrencyTable = {
     2002: 'mALGO',
     2020: 'MINT',
     2025: 'RPG',
+    2152: 'FRA',
     2222: 'KAVA',
     4002: 'FTM-testnet',
     4689: 'IOTX',
     5001: 'BIT-testnet',
+    7070: 'PLQ',
     7363: 'DND',
     7700: 'Canto',
     8080: 'SHM-testnet',
