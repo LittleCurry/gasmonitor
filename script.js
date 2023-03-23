@@ -86,6 +86,8 @@ var BaseGoerliTestneweb3 = new Web3('https://goerli.base.org')
 var ThunderCoreTestnetweb3 = new Web3('https://testnet-rpc.thundercore.com')
 var FindoraMainnetweb3 = new Web3('https://rpc-mainnet.findora.org')
 var PlanqMainnetweb3 = new Web3('https://evm-rpc.planq.network')
+var zkSyncEraMainnetweb3 = new Web3('https://zksync2-mainnet.zksync.io')
+
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -115,8 +117,9 @@ const ChainIDTable = {
     250: ftmweb3,
     269: HPBweb3,
     288: bobaweb3,
-    311:OMAXweb3,
+    311: OMAXweb3,
     321: kccweb3,
+    324: zkSyncEraMainnetweb3,
     336: shidenweb3,
     338: CronosTestnetweb3,
     592: astarweb3,
@@ -208,6 +211,7 @@ var ChainCurrencyTable = {
     288: 'ETH-boba',
     311: 'OMAX',
     321: 'KCS',
+    324: 'ETH-ZK',
     336: 'SDN',
     338: 'cro-testnet',
     592: 'ASTR',
