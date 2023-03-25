@@ -211,7 +211,7 @@ var ChainCurrencyTable = {
     288: 'ETH-boba',
     311: 'OMAX',
     321: 'KCS',
-    324: 'ETH-ZK',
+    324: 'ETH-zkSync',
     336: 'SDN',
     338: 'cro-testnet',
     592: 'ASTR',
