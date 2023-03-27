@@ -87,7 +87,7 @@ var ThunderCoreTestnetweb3 = new Web3('https://testnet-rpc.thundercore.com')
 var FindoraMainnetweb3 = new Web3('https://rpc-mainnet.findora.org')
 var PlanqMainnetweb3 = new Web3('https://evm-rpc.planq.network')
 var zkSyncEraMainnetweb3 = new Web3('https://zksync2-mainnet.zksync.io')
-
+var MoonbaseAlphaweb3 = new Web3('https://rpc.testnet.moonbeam.network')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -135,6 +135,7 @@ const ChainIDTable = {
     1284: moonbeamweb3,
     1294: bobabeamweb3,
     1285: moonriverweb3,
+    1287: MoonbaseAlphaweb3,
     1422: PolygonzkEVMTestnetweb3,
     1818: cubeweb3,
     1975: ONUSweb3,
@@ -227,6 +228,7 @@ var ChainCurrencyTable = {
     1234: 'FITFI',
     1284: 'GLMR',
     1285: 'MOVR',
+    1287: 'DEV',
     1294: 'Boba',
     1422: 'ETH-testnet',
     1975: 'ONUS',
