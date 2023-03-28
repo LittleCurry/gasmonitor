@@ -88,6 +88,7 @@ var FindoraMainnetweb3 = new Web3('https://rpc-mainnet.findora.org')
 var PlanqMainnetweb3 = new Web3('https://evm-rpc.planq.network')
 var zkSyncEraMainnetweb3 = new Web3('https://zksync2-mainnet.zksync.io')
 var MoonbaseAlphaweb3 = new Web3('https://rpc.testnet.moonbeam.network')
+var PolygonzkEVMweb3 = new Web3('https://zkevm-rpc.com') 
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -129,6 +130,7 @@ const ChainIDTable = {
     1024: cloverweb3,
     1030: confluxweb3,
     1088: metisweb3,
+    1101: PolygonzkEVMweb3,
     1111: wemix3web3,
     1112: WEMIXTestnetweb3,
     1234: stepweb3,
@@ -223,6 +225,7 @@ var ChainCurrencyTable = {
     1030: 'CFX',
     1818: 'CUBE',
     1088: 'METIS',
+    1101: 'ETH-PolygonZkEVM',
     1111: 'Wemix',
     1112: 'wemix-testnet',
     1234: 'FITFI',
