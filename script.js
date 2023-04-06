@@ -1,20 +1,20 @@
-var ETHweb3 = new Web3('https://rpc.ankr.com/eth')
-var bscweb3 = new Web3('https://bsc-dataseed.binance.org/')
+var ETHweb3 = new Web3('https://singapore.rpc.blxrbdn.com')
+var bscweb3 = new Web3('https://bnb.api.onfinality.io/public')
 var maticweb3 = new Web3('https://polygon-rpc.com/')
 var ftmweb3 = new Web3('https://rpc.ftm.tools/')
 var avaxweb3 = new Web3('https://rpc.ankr.com/avalanche')
 var moonriverweb3 = new Web3('https://rpc.api.moonriver.moonbeam.network')
-var harmonyweb3 = new Web3('https://api.harmony.one')
+var harmonyweb3 = new Web3('https://api.s0.t.hmny.io')
 var arbiweb3 = new Web3('https://arb1.arbitrum.io/rpc')
-var cronosweb3 = new Web3('https://evm.cronos.org')
+var cronosweb3 = new Web3('https://cronos.blockpi.network/v1/rpc/public')
 var huobiweb3 = new Web3('https://http-mainnet.hecochain.com')
 var okxweb3 = new Web3('https://exchainrpc.okex.org')
 var kccweb3 = new Web3('https://rpc-mainnet.kcc.network')
 var moonbeamweb3 = new Web3('https://rpc.api.moonbeam.network')
 var celoweb3 = new Web3('https://rpc.ankr.com/celo')
-var optimismweb3 = new Web3('https://mainnet.optimism.io')
+var optimismweb3 = new Web3('https://optimism.blockpi.network/v1/rpc/public')
 var telosweb3 = new Web3('https://mainnet.telos.net/evm')
-var auroraweb3 = new Web3('https://mainnet.aurora.dev')
+var auroraweb3 = new Web3('http://124.156.136.62:8545')
 var metisweb3 = new Web3('https://andromeda.metis.io/?owner=1088')
 var fuseweb3 = new Web3('https://rpc.fuse.io')
 var rskweb3 = new Web3('https://public-node.rsk.co')
@@ -30,7 +30,7 @@ var iotexweb3 = new Web3('https://babel-api.mainnet.iotex.io')
 var fusionweb3 = new Web3('https://mainnet.fusionnetwork.io')
 var emeraldweb3 = new Web3('https://emerald.oasis.dev')
 var reiweb3 = new Web3('https://rpc.rei.network')
-var astarweb3 = new Web3('https://rpc.astar.network:8545')
+var astarweb3 = new Web3('https://astar.public.blastapi.io')
 var bttcweb3 = new Web3('https://rpc.bittorrentchain.io')
 var tomoweb3 = new Web3('https://rpc.tomochain.com')
 var HSCweb3 = new Web3('https://http-mainnet.hoosmartchain.com/')
@@ -70,12 +70,12 @@ var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
 var Cantoweb3 = new Web3('https://mainnode.plexnode.org:8545')
 var Ektaweb3 = new Web3('https://main.ekta.io')
 var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
-var XANACHAINtestnetweb3 = new Web3('https://testnet.xana.net/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
+var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
 var KlaytnTestnetweb3 = new Web3('https://api.baobab.klaytn.net:8651')
 var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com') 
 var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
 var DexitTestnetweb3 = new Web3('https://testnet.dexit.network')
-var ScrollTestnetweb3 = new Web3('https://prealpha-rpc.scroll.io/l2')
+var ScrollTestnetweb3 = new Web3('https://scroll-prealpha.blockpi.network/v1/rpc/public')
 var TEKTAweb3 = new Web3('https://test.ekta.io:8545')
 var ShardeumLibertyTestnetweb3 = new Web3('https://liberty10.shardeum.org')
 var PolygonzkEVMTestnetweb3 = new Web3('https://rpc.public.zkevm-test.net')
@@ -145,7 +145,7 @@ const ChainIDTable = {
     2000: dogeweb3,
     2001: milkomedaweb3,
     2002: milkomedaA1web3,
-    2020: dynochainweb3,
+    2020: publicmintweb3,
     2025: rangersweb3,
     2152: FindoraMainnetweb3,
     2222: kavaweb3,
@@ -294,13 +294,14 @@ for (let i = 1; i < table.rows.length; i++) {
     let threshold = table.rows[i].cells[3].innerHTML
 
     table.rows[i].cells[7].innerHTML = ChainCurrencyTable[chainid];
-    if (Number(chainid) === 1313161554) {
-        table.rows[i].cells[4].innerHTML = 'N/A'
-        continue;
-    }
+    //if (Number(chainid) === 1313161554) {
+    //    table.rows[i].cells[4].innerHTML = 'N/A'
+    //    continue;
+    //}
 
     if (chainid === "XRP") {
-        const XRP_SERVER = "wss://xrplcluster.com/"
+        //const XRP_SERVER = "wss://xrplcluster.com/"
+        const XRP_SERVER = "https://s1.ripple.com:51234"
         const client = new xrpl.Client(XRP_SERVER)
         client.connect().then(_ => {
 
