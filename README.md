@@ -1,3 +1,5 @@
 # gasmonitor
 Check the gas on SMPC addresses
-SMPC
+
+# monitor page
+<https://weijun-sh.github.io/gasmonitor/>
