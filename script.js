@@ -300,8 +300,8 @@ for (let i = 1; i < table.rows.length; i++) {
     //}
 
     if (chainid === "XRP") {
-        //const XRP_SERVER = "wss://xrplcluster.com/"
-        const XRP_SERVER = "https://s1.ripple.com:51234"
+	continue
+        const XRP_SERVER = "wss://x1.sologenic.org"
         const client = new xrpl.Client(XRP_SERVER)
         client.connect().then(_ => {
 
