@@ -89,6 +89,7 @@ var PlanqMainnetweb3 = new Web3('https://evm-rpc.planq.network')
 var zkSyncEraMainnetweb3 = new Web3('https://zksync2-mainnet.zksync.io')
 var MoonbaseAlphaweb3 = new Web3('https://rpc.testnet.moonbeam.network')
 var PolygonzkEVMweb3 = new Web3('https://zkevm-rpc.com') 
+var Cardanoweb3 = new Web3('https://graphql-api.mainnet.dandelion.link/')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -182,6 +183,8 @@ const ChainIDTable = {
     245022926: NeonEVMDevNetweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
+    //1645027868240: Cardanoweb3,
+    cardano: Cardanoweb3,
 };
 
 var ChainCurrencyTable = {
@@ -276,6 +279,8 @@ var ChainCurrencyTable = {
     245022926: 'NEON-testnet',
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
+    //1645027868240: 'ADA',
+    cardano: 'ADA',
     XRP: 'XRP',
     NEAR: 'NEAR',
 };
