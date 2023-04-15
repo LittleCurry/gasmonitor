@@ -1,5 +1,5 @@
 var ETHweb3 = new Web3('https://singapore.rpc.blxrbdn.com')
-var bscweb3 = new Web3('https://bnb.api.onfinality.io/public')
+var bscweb3 = new Web3('https://bsc.blockpi.network/v1/rpc/public')
 var maticweb3 = new Web3('https://polygon-rpc.com/')
 var ftmweb3 = new Web3('https://rpc.ftm.tools/')
 var avaxweb3 = new Web3('https://rpc.ankr.com/avalanche')
