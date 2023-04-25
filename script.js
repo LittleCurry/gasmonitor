@@ -317,6 +317,20 @@ for (let i = 1; i < table.rows.length; i++) {
         })
         continue
     }
+
+    if (chainid === "cardano") {
+        continue
+        // table.rows[i].cells[4].innerHTML = "unsupport"
+        // const XRP_SERVER = "wss://x1.sologenic.org"
+        // const client = new xrpl.Client(XRP_SERVER)
+        // client.connect().then(_ => {
+        //     client.getXrpBalance(address).then(balance => {
+        //         table.rows[i].cells[4].innerHTML = balance
+        //     })
+        //
+        // })
+        continue
+    }
     //near
     // if (chainid === "NEAR") {
     //     // Import the near-api-js library
