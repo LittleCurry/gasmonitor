@@ -305,32 +305,17 @@ for (let i = 1; i < table.rows.length; i++) {
     //}
 
     if (chainid === "XRP") {
-	continue
-        const XRP_SERVER = "wss://x1.sologenic.org"
+        const XRP_SERVER = "wss://xrplcluster.com/"
         const client = new xrpl.Client(XRP_SERVER)
-        client.connect().then(_ => {
-
+        client.connect().then( _ => {
             client.getXrpBalance(address).then(balance => {
-                table.rows[i].cells[4].innerHTML = balance
-            })
-
+                table.rows[i].cells[4].innerHTML = balance})
         })
-        continue
-    }
-
+        continue}
     if (chainid === "cardano") {
         continue
-        // table.rows[i].cells[4].innerHTML = "unsupport"
-        // const XRP_SERVER = "wss://x1.sologenic.org"
-        // const client = new xrpl.Client(XRP_SERVER)
-        // client.connect().then(_ => {
-        //     client.getXrpBalance(address).then(balance => {
-        //         table.rows[i].cells[4].innerHTML = balance
-        //     })
-        //
-        // })
-        continue
     }
+
     //near
     // if (chainid === "NEAR") {
     //     // Import the near-api-js library
@@ -340,9 +325,7 @@ for (let i = 1; i < table.rows.length; i++) {
     //     const CREDENTIALS_DIR = ".near-credentials";
     //     const credentialsPath = require("path").join(homedir, CREDENTIALS_DIR);
     //     const myKeyStore = new keyStores.UnencryptedFileSystemKeyStore(credentialsPath);
-
     //     const { connect } = nearAPI;
-
     //     const connectionConfig = {
     //         networkId: "mainnet",
     //         keyStore: myKeyStore, // first create a key store
@@ -354,15 +337,12 @@ for (let i = 1; i < table.rows.length; i++) {
 
     //     async function getAccountBalance() {
     //         const nearConnection = await connect(connectionConfig);
-
     //         const account = await nearConnection.account(address);
-
     //         // gets account balance
     //         const balance = await (await account.getAccountBalance()).total;
     //         const balanceInNear = parseInt(balance.slice(0, -24));
     //         table.rows[i].cells[4].innerHTML = balanceInNear;
     //     }
-
     //     getAccountBalance();
     //     continue;
     // }
@@ -371,7 +351,6 @@ for (let i = 1; i < table.rows.length; i++) {
 
     try {
         let web3 = ChainIDTable[chainid]
-
         web3.eth.getBalance(address, function (error, wei) {
             if (!error) {
                 balance = web3.utils.fromWei(wei, 'ether');
