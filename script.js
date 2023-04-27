@@ -53,7 +53,7 @@ var bobabeamweb3 = new Web3('https://bobabeam.boba.network')
 var godwokenweb3 = new Web3('https://v1.mainnet.godwoken.io/rpc')
 var milkomedaA1web3 = new Web3('https://rpc-mainnet-algorand-rollup.a1.milkomeda.com')
 var wemix3web3 = new Web3('https://api.wemix.com/')
-var bitgertweb3 = new Web3('https://nodes.vefinetwork.org/bitgert')
+var bitgertweb3 = new Web3('https://serverrpc.com')
 var publicmintweb3 = new Web3('https://rpc.publicmint.io:8545/')
 var dynochainweb3 = new Web3('https://rpc.dynochain.io')
 var evmosweb3 = new Web3('https://json-rpc.evmos.blockhunters.org')
@@ -72,7 +72,7 @@ var Ektaweb3 = new Web3('https://main.ekta.io')
 var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
 var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
 var KlaytnTestnetweb3 = new Web3('https://api.baobab.klaytn.net:8651')
-var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com') 
+var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com')
 var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
 var DexitTestnetweb3 = new Web3('https://testnet.dexit.network')
 var ScrollTestnetweb3 = new Web3('https://scroll-prealpha.blockpi.network/v1/rpc/public')
@@ -285,35 +285,45 @@ var ChainCurrencyTable = {
     NEAR: 'NEAR',
 };
 
-
 var table = document.getElementById("table");
 
 console.log(table.rows.length);
 
 for (let i = 1; i < table.rows.length; i++) {
+    updateOne(i, 0, retryOne);
+    table.rows[i].cells[4].onclick = function (){clickOne(i, 0, retryOne)}
+}
+
+function clickOne(i, times, myCallback) {
+    table.rows[i].cells[4].innerHTML = "• • •"
+    updateOne(i, 0, retryOne)
+}
+
+function updateOne(i, times, myCallback) {
+    table.rows[i].cells[4].innerHTML = "• • •"
     let address = table.rows[i].cells[1].innerHTML
     let chainid = table.rows[i].cells[2].innerHTML
-
     let wei
     let balance
     let threshold = table.rows[i].cells[3].innerHTML
-
     table.rows[i].cells[7].innerHTML = ChainCurrencyTable[chainid];
-    //if (Number(chainid) === 1313161554) {
-    //    table.rows[i].cells[4].innerHTML = 'N/A'
-    //    continue;
-    //}
+    let web3 = ChainIDTable[chainid]
+
+    // times++
+    //             myCallback(i, times);
 
     if (chainid === "XRP") {
         const XRP_SERVER = "wss://xrplcluster.com/"
         const client = new xrpl.Client(XRP_SERVER)
-        client.connect().then( _ => {
+        client.connect().then(_ => {
             client.getXrpBalance(address).then(balance => {
-                table.rows[i].cells[4].innerHTML = balance})
+                table.rows[i].cells[4].innerHTML = balance
+            })
         })
-        continue}
+        return
+    }
     if (chainid === "cardano") {
-        continue
+        return
     }
 
     //near
@@ -335,41 +345,28 @@ for (let i = 1; i < table.rows.length; i++) {
     //         explorerUrl: "https://explorer.mainnet.near.org",
     //     };
 
-    //     async function getAccountBalance() {
-    //         const nearConnection = await connect(connectionConfig);
-    //         const account = await nearConnection.account(address);
-    //         // gets account balance
-    //         const balance = await (await account.getAccountBalance()).total;
-    //         const balanceInNear = parseInt(balance.slice(0, -24));
-    //         table.rows[i].cells[4].innerHTML = balanceInNear;
-    //     }
-    //     getAccountBalance();
-    //     continue;
-    // }
-    
-
-
-    try {
-        let web3 = ChainIDTable[chainid]
-        web3.eth.getBalance(address, function (error, wei) {
-            if (!error) {
-                balance = web3.utils.fromWei(wei, 'ether');
-                //var balance = wei;
-                //table.rows[i].cells[4].innerHTML = balance.toFixed(2);
-                table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
-                console.log(chainid);
-                console.log(balance);
-                console.log(threshold);
-                if (Number(balance) < Number(threshold)) {
-                    table.rows[i].cells[5].innerHTML = '**** Balance Below Threshold ****'
-                }
+    web3.eth.getBalance(address, function (error, wei) {
+        if (!error) {
+            balance = web3.utils.fromWei(wei, 'ether');
+            table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
+            if (Number(balance) < Number(threshold)) {
+                table.rows[i].cells[5].innerHTML = '**** Balance Below Threshold ****'
             }
-        });
-    } catch (err) {
-        table.rows[i].cells[4].innerHTML = err;
-    }
-
+        } else {
+            times++
+            myCallback(i, times);
+        }
+    });
 }
 
-        //ETHweb3 = new Web3("https://main-light.eth.linkpool.io");
-        //ETHweb3.eth.getBalance(0xdB8cC5036954cdeB24ED922c772b86FB9c7Bd7c5);
+function retryOne(i, times) {
+    if (times < 3) {
+        console.log(table.rows[i].cells[2].innerHTML,"retry 第", times+1, "次")
+        updateOne(i, times, retryOne);
+    } else {
+        table.rows[i].cells[4].innerHTML = "⟳"
+    }
+}
+
+//ETHweb3 = new Web3("https://main-light.eth.linkpool.io");
+//ETHweb3.eth.getBalance(0xdB8cC5036954cdeB24ED922c772b86FB9c7Bd7c5);
