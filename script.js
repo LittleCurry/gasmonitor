@@ -13,6 +13,7 @@ var kccweb3 = new Web3('https://rpc-mainnet.kcc.network')
 var moonbeamweb3 = new Web3('https://rpc.api.moonbeam.network')
 var celoweb3 = new Web3('https://rpc.ankr.com/celo')
 var optimismweb3 = new Web3('https://optimism.blockpi.network/v1/rpc/public')
+var flrweb3 = new Web3('https://flare-api.flare.network/ext/C/rpc')
 var telosweb3 = new Web3('https://mainnet.telos.net/evm')
 var auroraweb3 = new Web3('https://mainnet.aurora.dev')
 var metisweb3 = new Web3('https://andromeda.metis.io/?owner=1088')
@@ -95,6 +96,7 @@ const ChainIDTable = {
     1: ETHweb3,
     5: Goerliweb3,
     10: optimismweb3,
+    14: flrweb3,
     18: ThunderCoreTestnetweb3,
     24: kardiaweb3,
     25: cronosweb3,
@@ -191,6 +193,7 @@ var ChainCurrencyTable = {
     1: 'ETH',
     5: 'ETH-testnet',
     10: 'ETH-OP',
+    14: 'FLR',
     18: 'TST-testnet',
     24: 'CAI',
     25: 'CRO',
