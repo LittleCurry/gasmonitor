@@ -31,6 +31,7 @@ var iotexweb3 = new Web3('https://babel-api.mainnet.iotex.io')
 var fusionweb3 = new Web3('https://mainnet.fusionnetwork.io')
 var emeraldweb3 = new Web3('https://emerald.oasis.dev')
 var reiweb3 = new Web3('https://rpc.rei.network')
+var lineaweb3 = new Web3('https://rpc.goerli.linea.build')
 var astarweb3 = new Web3('https://astar.public.blastapi.io')
 var bttcweb3 = new Web3('https://rpc.bittorrentchain.io')
 var tomoweb3 = new Web3('https://rpc.tomochain.com')
@@ -176,6 +177,7 @@ const ChainIDTable = {
     43113: AvalancheFujiTestnetweb3,
     43114: avaxweb3,
     47805: reiweb3,
+    59140: lineaweb3,
     71402: godwokenweb3,
     76798: XANACHAINtestnetweb3,
     80001: Mumbaiweb3,
@@ -252,6 +254,7 @@ var ChainCurrencyTable = {
     4002: 'FTM-testnet',
     4689: 'IOTX',
     5001: 'BIT-testnet',
+    59140: 'Linea-testnet',
     7070: 'PLQ',
     7363: 'DND',
     7700: 'Canto',
