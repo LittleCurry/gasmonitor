@@ -72,15 +72,16 @@ var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
 var Cantoweb3 = new Web3('https://mainnode.plexnode.org:8545')
 var Ektaweb3 = new Web3('https://main.ekta.io')
 var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
-var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
+// var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
 var KlaytnTestnetweb3 = new Web3('https://api.baobab.klaytn.net:8651')
 var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com')
 var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
-var DexitTestnetweb3 = new Web3('https://testnet.dexit.network')
+// var DexitTestnetweb3 = new Web3('https://testnet.dexit.network')
 var ScrollTestnetweb3 = new Web3('https://scroll-prealpha.blockpi.network/v1/rpc/public')
 var TEKTAweb3 = new Web3('https://test.ekta.io:8545')
 var ShardeumLibertyTestnetweb3 = new Web3('https://liberty10.shardeum.org')
 var PolygonzkEVMTestnetweb3 = new Web3('https://rpc.public.zkevm-test.net')
+var tenetweb3 = new Web3('https://rpc.tenet.org')
 var MantleTestnetweb3 = new Web3('https://rpc.testnet.mantle.xyz')
 var NeonEVMDevNetweb3 = new Web3('https://devnet.neonevm.org')
 var ShardeumSphinxweb3 = new Web3('https://sphinx.shardeum.org')
@@ -91,7 +92,8 @@ var PlanqMainnetweb3 = new Web3('https://evm-rpc.planq.network')
 var zkSyncEraMainnetweb3 = new Web3('https://zksync2-mainnet.zksync.io')
 var MoonbaseAlphaweb3 = new Web3('https://rpc.testnet.moonbeam.network')
 var PolygonzkEVMweb3 = new Web3('https://zkevm-rpc.com')
-var Cardanoweb3 = new Web3('https://graphql-api.mainnet.dandelion.link/')
+var gMELDweb3 = new Web3('https://subnets.avax.network/meld/mainnet/rpc')
+// var Cardanoweb3 = new Web3('https://graphql-api.mainnet.dandelion.link/')
 
 const ChainIDTable = {
     1: ETHweb3,
@@ -128,7 +130,7 @@ const ChainIDTable = {
     336: shidenweb3,
     338: CronosTestnetweb3,
     592: astarweb3,
-    899: DexitTestnetweb3,
+    // 899: DexitTestnetweb3,
     1001: KlaytnTestnetweb3,
     1004: TEKTAweb3,
     1024: cloverweb3,
@@ -143,6 +145,7 @@ const ChainIDTable = {
     1285: moonriverweb3,
     1287: MoonbaseAlphaweb3,
     1422: PolygonzkEVMTestnetweb3,
+    1559: tenetweb3,
     1818: cubeweb3,
     1975: ONUSweb3,
     1994: Ektaweb3,
@@ -179,7 +182,7 @@ const ChainIDTable = {
     47805: reiweb3,
     59140: lineaweb3,
     71402: godwokenweb3,
-    76798: XANACHAINtestnetweb3,
+    // 76798: XANACHAINtestnetweb3,
     80001: Mumbaiweb3,
     84531: BaseGoerliTestneweb3,
     256256: caduceusweb3,
@@ -187,8 +190,9 @@ const ChainIDTable = {
     245022926: NeonEVMDevNetweb3,
     1313161554: auroraweb3,
     1666600000: harmonyweb3,
+    333000333: gMELDweb3,
     //1645027868240: Cardanoweb3,
-    cardano: Cardanoweb3,
+    // cardano: Cardanoweb3,
 };
 
 var ChainCurrencyTable = {
@@ -242,6 +246,7 @@ var ChainCurrencyTable = {
     1287: 'DEV',
     1294: 'Boba',
     1422: 'ETH-testnet',
+    1559: 'tenet',
     1975: 'ONUS',
     1994: 'Ekta',
     2000: 'DOGE',
@@ -285,6 +290,7 @@ var ChainCurrencyTable = {
     245022926: 'NEON-testnet',
     1313161554: 'ETH-aurora',
     1666600000: 'ONE',
+    333000333: 'gMELD',
     //1645027868240: 'ADA',
     cardano: 'ADA',
     XRP: 'XRP',
@@ -315,9 +321,6 @@ function updateOne(i, times, myCallback) {
     table.rows[i].cells[7].innerHTML = ChainCurrencyTable[chainid];
     let web3 = ChainIDTable[chainid]
 
-    // times++
-    //             myCallback(i, times);
-
     if (chainid === "XRP") {
         const XRP_SERVER = "wss://xrplcluster.com/"
         const client = new xrpl.Client(XRP_SERVER)
@@ -329,6 +332,15 @@ function updateOne(i, times, myCallback) {
         return
     }
     if (chainid === "cardano") {
+        return
+    }
+    if (chainid === "899") {
+        return
+    }
+    if (chainid === "76798") {
+        return
+    }
+    if (chainid === "7363") {
         return
     }
 
