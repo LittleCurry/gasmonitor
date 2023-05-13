@@ -48,6 +48,7 @@ var mintmeweb3 = new Web3('https://node1.mintme.com')
 var smartBCHweb3 = new Web3('https://global.uat.cash')
 var arbiNovaweb3 = new Web3('https://nova.arbitrum.io/rpc')
 var caduceusweb3 = new Web3('https://mainnet.block.caduceus.foundation')
+var ArbitrumGoerliweb3 = new Web3('https://endpoints.omniatech.io/v1/arbitrum/goerli/public')
 var stepweb3 = new Web3('https://rpc.step.network')
 var dogeweb3 = new Web3('https://rpc03-sg.dogechain.dog')
 var rangersweb3 = new Web3('https://mainnet.rangersprotocol.com/api/jsonrpc')
@@ -62,6 +63,7 @@ var evmosweb3 = new Web3('https://json-rpc.evmos.blockhunters.org')
 var xanaweb3 = new Web3('https://mainnet.xana.net/rpc')
 var ETHWweb3 = new Web3('https://mainnet.ethereumpow.org')
 var HPBweb3 = new Web3('https://hpbnode.com')
+var zkSyncEraTestweb3 = new Web3('https://testnet.era.zksync.dev')
 var ONUSweb3 = new Web3('https://rpc.onuschain.io')
 var Goerliweb3 = new Web3('https://rpc.ankr.com/eth_goerli')
 var BNBTestnetweb3 = new Web3('https://bsc-testnet.public.blastapi.io')
@@ -69,6 +71,7 @@ var FantomTestnetweb3 = new Web3('https://rpc.ankr.com/fantom_testnet')
 var AvalancheFujiTestnetweb3 = new Web3('https://rpc.ankr.com/avalanche_fuji')
 var OMAXweb3 = new Web3('https://mainapi.omaxray.com')
 var OasisSapphireweb3 = new Web3('https://sapphire.oasis.io')
+var OasisSapphireTestweb3 = new Web3('https://testnet.sapphire.oasis.dev')
 var Cantoweb3 = new Web3('https://mainnode.plexnode.org:8545')
 var Ektaweb3 = new Web3('https://main.ekta.io')
 var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
@@ -76,6 +79,7 @@ var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
 var KlaytnTestnetweb3 = new Web3('https://api.baobab.klaytn.net:8651')
 var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com')
 var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
+var OptimismGoerliTestweb3 = new Web3('https://opt-goerli.g.alchemy.com/v2/demo')
 // var DexitTestnetweb3 = new Web3('https://testnet.dexit.network')
 var ScrollTestnetweb3 = new Web3('https://scroll-prealpha.blockpi.network/v1/rpc/public')
 var TEKTAweb3 = new Web3('https://test.ekta.io:8545')
@@ -123,12 +127,14 @@ const ChainIDTable = {
     199: bttcweb3,
     250: ftmweb3,
     269: HPBweb3,
+    280: zkSyncEraTestweb3,
     288: bobaweb3,
     311: OMAXweb3,
     321: kccweb3,
     324: zkSyncEraMainnetweb3,
     336: shidenweb3,
     338: CronosTestnetweb3,
+    420: OptimismGoerliTestweb3,
     592: astarweb3,
     // 899: DexitTestnetweb3,
     1001: KlaytnTestnetweb3,
@@ -170,6 +176,7 @@ const ChainIDTable = {
     10000: smartBCHweb3,
     10001: ETHWweb3,
     23294: OasisSapphireweb3,
+    23295: OasisSapphireTestweb3,
     24734: mintmeweb3,
     32520: bitgertweb3,
     32659: fusionweb3,
@@ -186,6 +193,7 @@ const ChainIDTable = {
     80001: Mumbaiweb3,
     84531: BaseGoerliTestneweb3,
     256256: caduceusweb3,
+    421613: ArbitrumGoerliweb3,
     534354: ScrollTestnetweb3,
     245022926: NeonEVMDevNetweb3,
     1313161554: auroraweb3,
@@ -363,6 +371,7 @@ function updateOne(i, times, myCallback) {
     //         explorerUrl: "https://explorer.mainnet.near.org",
     //     };
 
+    console.log('web3:', web3, chainid)
     web3.eth.getBalance(address, function (error, wei) {
         if (!error) {
             balance = web3.utils.fromWei(wei, 'ether');
