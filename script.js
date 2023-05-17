@@ -75,7 +75,7 @@ var OasisSapphireTestweb3 = new Web3('https://testnet.sapphire.oasis.dev')
 var Cantoweb3 = new Web3('https://mainnode.plexnode.org:8545')
 var Ektaweb3 = new Web3('https://main.ekta.io')
 var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
-// var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
+ var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
 var KlaytnTestnetweb3 = new Web3('https://api.baobab.klaytn.net:8651')
 var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com')
 var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
@@ -189,7 +189,7 @@ const ChainIDTable = {
     47805: reiweb3,
     59140: lineaweb3,
     71402: godwokenweb3,
-    // 76798: XANACHAINtestnetweb3,
+    76798: XANACHAINtestnetweb3,
     80001: Mumbaiweb3,
     84531: BaseGoerliTestneweb3,
     256256: caduceusweb3,
@@ -231,12 +231,14 @@ var ChainCurrencyTable = {
     199: 'BTT',
     250: 'FTM',
     269: 'HPB',
+    280: 'zksync goerli',
     288: 'ETH-boba',
     311: 'OMAX',
     321: 'KCS',
     324: 'ETH-zkSync',
     336: 'SDN',
     338: 'cro-testnet',
+    420: 'optimism goerli',
     592: 'ASTR',
     899: 'DXT-testnet',
     1001: 'KLAY-testnet',
@@ -279,6 +281,7 @@ var ChainCurrencyTable = {
     10000: 'BCH',
     10001: 'ETHW',
     23294: 'ROSE',
+    23295: 'oasis testnet',
     24734: 'MINTME',
     32520: 'BRISE',
     32659: 'FSN',
@@ -294,6 +297,7 @@ var ChainCurrencyTable = {
     80001: 'MATIC-testnet',
     84531: 'ETH-Base-testnet',
     256256: 'CMP',
+    421613: 'arbitrum goerli',
     534354: 'TSETH-testnet',
     245022926: 'NEON-testnet',
     1313161554: 'ETH-aurora',
@@ -345,9 +349,9 @@ function updateOne(i, times, myCallback) {
     if (chainid === "899") {
         return
     }
-    if (chainid === "76798") {
-        return
-    }
+//    if (chainid === "76798") {
+//        return
+//    }
     if (chainid === "7363") {
         return
     }
@@ -370,8 +374,9 @@ function updateOne(i, times, myCallback) {
     //         helperUrl: "https://helper.mainnet.near.org",
     //         explorerUrl: "https://explorer.mainnet.near.org",
     //     };
-
-    console.log('web3:', web3, chainid)
+    if (web3 == undefined) {
+           return
+    }
     web3.eth.getBalance(address, function (error, wei) {
         if (!error) {
             balance = web3.utils.fromWei(wei, 'ether');
