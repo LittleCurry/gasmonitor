@@ -253,7 +253,7 @@ var ChainCurrencyTable = {
     1234: 'FITFI',
     1284: 'GLMR',
     1285: 'MOVR',
-    1287: 'DEV',
+    1287: 'Moonbase testnet',
     1294: 'Boba',
     1422: 'ETH-testnet',
     1559: 'tenet',
