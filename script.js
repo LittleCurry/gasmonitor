@@ -377,7 +377,7 @@ function updateOne(i, times, myCallback) {
     if (web3 == undefined) {
            return
     }
-    web3.eth.getBalance(address, function (error, wei) {
+    web3.eth.getBalance(address,'latest', function (error, wei) {
         if (!error) {
             balance = web3.utils.fromWei(wei, 'ether');
             table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
