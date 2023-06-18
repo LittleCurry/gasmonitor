@@ -75,7 +75,7 @@ var OasisSapphireTestweb3 = new Web3('https://testnet.sapphire.oasis.dev')
 var Cantoweb3 = new Web3('https://mainnode.plexnode.org:8545')
 var Ektaweb3 = new Web3('https://main.ekta.io')
 var Mumbaiweb3 = new Web3('https://matic-mumbai.chainstacklabs.com')
- var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
+var XANACHAINtestnetweb3 = new Web3('http://13.215.68.247:9650/ext/bc/2dNW4t2bMKcnAamjCX7e79iFw1LEvyb8CYWXcX7NeUUQM9TdM8/rpc')
 var KlaytnTestnetweb3 = new Web3('https://api.baobab.klaytn.net:8651')
 var WEMIXTestnetweb3 = new Web3('https://api.test.wemix.com')
 var CronosTestnetweb3 = new Web3('https://evm-t3.cronos.org')
@@ -315,7 +315,9 @@ console.log(table.rows.length);
 
 for (let i = 1; i < table.rows.length; i++) {
     updateOne(i, 0, retryOne);
-    table.rows[i].cells[4].onclick = function (){clickOne(i, 0, retryOne)}
+    table.rows[i].cells[4].onclick = function () {
+        clickOne(i, 0, retryOne)
+    }
 }
 
 function clickOne(i, times, myCallback) {
@@ -327,8 +329,6 @@ function updateOne(i, times, myCallback) {
     table.rows[i].cells[4].innerHTML = "• • •"
     let address = table.rows[i].cells[1].innerHTML
     let chainid = table.rows[i].cells[2].innerHTML
-    let wei
-    let balance
     let threshold = table.rows[i].cells[3].innerHTML
     table.rows[i].cells[7].innerHTML = ChainCurrencyTable[chainid];
     let web3 = ChainIDTable[chainid]
@@ -375,25 +375,40 @@ function updateOne(i, times, myCallback) {
     //         explorerUrl: "https://explorer.mainnet.near.org",
     //     };
     if (web3 == undefined) {
-           return
+        return
     }
-    web3.eth.getBalance(address,'latest', function (error, wei) {
-        if (!error) {
-            balance = web3.utils.fromWei(wei, 'ether');
-            table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
-            if (Number(balance) < Number(threshold)) {
-                table.rows[i].cells[5].innerHTML = '**** Balance Below Threshold ****'
-            }
-        } else {
-            times++
-            myCallback(i, times);
+
+    web3.eth.getBalance(address).then(wei => {
+        let balance = web3.utils.fromWei(wei, 'ether');
+        table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
+        if (Number(balance) < Number(threshold)) {
+            table.rows[i].cells[5].innerHTML = '**** Balance Below Threshold ****'
         }
-    });
+    }, error => {
+        times++
+        myCallback(i, times);
+    })
+    // setTimeout(() => {
+    //     console.warn('查询余额超时');
+    // }, 5000);
+
+    // web3.eth.getBalance(address, function (error, wei) {
+    //     if (!error) {
+    //         balance = web3.utils.fromWei(wei, 'ether');
+    //         table.rows[i].cells[4].innerHTML = Number(balance).toFixed(5);
+    //         if (Number(balance) < Number(threshold)) {
+    //             table.rows[i].cells[5].innerHTML = '**** Balance Below Threshold ****'
+    //         }
+    //     } else {
+    //         times++
+    //         myCallback(i, times);
+    //     }
+    // });
 }
 
 function retryOne(i, times) {
     if (times < 3) {
-        console.log(table.rows[i].cells[2].innerHTML,"retry 第", times+1, "次")
+        console.log(table.rows[i].cells[2].innerHTML, "retry 第", times + 1, "次")
         updateOne(i, times, retryOne);
     } else {
         table.rows[i].cells[4].innerHTML = "⟳"
